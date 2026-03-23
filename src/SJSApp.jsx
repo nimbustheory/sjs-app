@@ -376,10 +376,12 @@ function EventsTab({ openVip, setTicketModal }) {
             <div style={styles.sellBar}><div className="sell-fill" style={{ width: `${s.sold}%` }} /></div>
             <span style={styles.sellLabel}>{s.sold}% sold</span>
           </div>
+          <div style={{ display: "flex", justifyContent: "flex-end", padding: "0 18px 6px" }}>
+            <button className="btn-share" style={{ ...styles.btnShare, padding: "8px 10px", borderRadius: 6 }} onClick={() => shareEvent(s)} aria-label={`Share ${s.title}`}><ShareIcon /></button>
+          </div>
           <div style={styles.ecActions}>
-            <button className="btn-gold" style={styles.btnGold} onClick={() => setTicketModal(s)}>Get Tickets — {s.price}</button>
-            <button className="btn-outline" style={styles.btnOutline} onClick={() => openVip(s)}>VIP Table</button>
-            <button className="btn-share" style={styles.btnShare} onClick={() => shareEvent(s)} aria-label={`Share ${s.title}`}><ShareIcon /></button>
+            <button className="btn-gold" style={{ ...styles.btnGold, flex: 1 }} onClick={() => setTicketModal(s)}>Get Tickets — {s.price}</button>
+            <button className="btn-outline" style={{ ...styles.btnOutline, flex: 1 }} onClick={() => openVip(s)}>VIP Table</button>
           </div>
         </article>
       ))}

@@ -108,7 +108,7 @@ export default function SJSApp() {
       {/* Header */}
       <header style={styles.header} className={loaded ? "fade-in" : ""}>
         <div style={styles.logoBlock}>
-          <img src="/images/logo.png" alt="Slow Jam Sundays" style={styles.logoImg} />
+          <img src="/images/logo.png" alt="Slow Jam Sundays" style={styles.logoImg} width={80} height={32} fetchPriority="high" />
         </div>
         <div style={styles.headerActions}>
           <button style={styles.headerBtn} onClick={() => setNotifModal(true)} aria-label="Notifications" className="btn-nav">
@@ -268,7 +268,7 @@ function HomeTab({ stamps, openVip, setTab, notifDone, dismissNotif, setTicketMo
       {/* Hero Card */}
       <div style={styles.heroCard}>
         <div style={styles.heroImageWrap}>
-          <img src="/images/crowd-family.jpg" alt="" style={styles.heroImage} />
+          <img src="/images/crowd-family.jpg" alt="" style={styles.heroImage} width={600} height={400} decoding="async" fetchPriority="high" />
           <div style={styles.heroImageOverlay} />
         </div>
         <div style={styles.heroEyebrow}>NEXT EVENT</div>
@@ -355,7 +355,7 @@ function EventsTab({ openVip, setTicketModal }) {
       {SHOWS.map((s) => (
         <article key={s.id} style={styles.eventCard}>
           <div style={styles.ecImageWrap}>
-            <img src={s.image} alt={s.title} style={styles.ecImage} loading="lazy" />
+            <img src={s.image} alt={s.title} style={styles.ecImage} loading="lazy" decoding="async" width={400} height={150} />
             <div style={styles.ecImageOverlay} />
           </div>
           <div style={styles.eventCardTop}>
@@ -538,7 +538,7 @@ function VIPLanding({ openVip }) {
       <div style={styles.pageTitle}>VIP EXPERIENCE</div>
       <div style={styles.vipHero}>
         <div style={styles.vipImageWrap}>
-          <img src="/images/easter.jpg" alt="VIP bottle service at SJS" style={styles.vipImage} loading="lazy" />
+          <img src="/images/easter.jpg" alt="VIP bottle service at SJS" style={styles.vipImage} loading="lazy" decoding="async" width={600} height={400} />
           <div style={styles.vipImageOverlay} />
         </div>
         <div style={{ position: "relative", zIndex: 1 }}>
@@ -583,7 +583,7 @@ function MoreTab() {
       {/* Hero about */}
       <div style={styles.aboutHero}>
         <div style={styles.aboutImageWrap}>
-          <img src="/images/about.png" alt="The SJS Crew" style={styles.aboutImage} />
+          <img src="/images/about.jpg" alt="The SJS Crew" style={styles.aboutImage} loading="lazy" decoding="async" width={600} height={400} />
           <div style={styles.aboutImageOverlay} />
         </div>
         <div style={{ position: "relative", zIndex: 1 }}>
